@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base Styles */
+:root {
+  --primary: #D4A574;
+  --secondary: #2C3E2F;
+  --accent: #E8D4C4;
+  --dark: #1A1A1A;
+  --light: #F9F7F4;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  @apply bg-light text-dark font-sans;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Typography */
+h1 {
+  @apply font-serif font-bold text-5xl tracking-tight;
+}
+
+h2 {
+  @apply font-serif font-bold text-4xl;
+}
+
+h3 {
+  @apply font-serif font-bold text-3xl;
+}
+
+h4 {
+  @apply font-serif font-semibold text-2xl;
+}
+
+h5 {
+  @apply font-serif font-semibold text-xl;
+}
+
+h6 {
+  @apply font-serif font-semibold text-lg;
+}
+
+p {
+  @apply text-base leading-relaxed;
+}
+
+/* Links */
+a {
+  @apply text-primary-500 hover:text-primary-600 transition-colors duration-200;
+}
+
+a.nav-link {
+  @apply text-dark hover:text-primary-500 transition-colors duration-200;
+}
+
+/* Buttons */
+.btn {
+  @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.btn-primary {
+  @apply bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-500;
+}
+
+.btn-secondary {
+  @apply bg-secondary-500 text-white hover:bg-secondary-600 focus:ring-secondary-500;
+}
+
+.btn-outline {
+  @apply border-2 border-primary-500 text-primary-500 hover:bg-primary-50 focus:ring-primary-500;
+}
+
+.btn-text {
+  @apply text-primary-500 hover:text-primary-600 focus:ring-primary-500;
+}
+
+/* Forms */
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='number'],
+input[type='tel'],
+input[type='date'],
+textarea,
+select {
+  @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-primary-500 focus:ring-primary-500 transition-colors duration-200;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  @apply outline-none ring-2 ring-primary-200;
+}
+
+/* Cards */
+.card {
+  @apply bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-200 overflow-hidden;
+}
+
+.card-hover {
+  @apply cursor-pointer transform hover:-translate-y-1 transition-transform duration-200;
+}
+
+/* Container */
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.4s ease-out;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.3s ease-out;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4a574;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c69565;
+}
+
+/* Utility Classes */
+.text-gradient {
+  @apply bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent;
+}
+
+.glass-effect {
+  @apply backdrop-blur-md bg-white/30 border border-white/20;
+}
+
+.shadow-gold {
+  @apply shadow-[0_10px_25px_-5px_rgba(212,165,116,0.2)];
+}
+
+/* Print Styles */
+@media print {
+  * {
+    @apply !shadow-none !outline-none;
+  }
+}
+
+/* Accessibility */
+.sr-only {
+  @apply absolute w-px h-px p-0 m-[-1px] overflow-hidden clip-path-inset-50 whitespace-nowrap border-0;
+}
+
+.focus-visible {
+  @apply outline-2 outline-offset-2 outline-primary-500;
+}
+
+/* Responsive Typography */
+@screen sm {
+  h1 {
+    @apply text-4xl;
+  }
+  h2 {
+    @apply text-3xl;
+  }
+}
+
+@screen md {
+  h1 {
+    @apply text-5xl;
+  }
+  h2 {
+    @apply text-4xl;
+  }
+}
+
+@screen lg {
+  h1 {
+    @apply text-6xl;
+  }
+  h2 {
+    @apply text-5xl;
+  }
+}
