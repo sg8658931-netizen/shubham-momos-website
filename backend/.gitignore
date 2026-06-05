@@ -1,0 +1,38 @@
+# .env.local (development)
+node_modules/
+.env
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Build
+dist/
+build/
+.next/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Prisma
+prisma/migrations/
+.prisma/
+
+# Testing
+coverage/
+.nyc_output/
